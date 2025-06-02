@@ -582,3 +582,10 @@ img {
 .instagram_footer_logo {
   width: 32px;
 }
+
+.gawa_header_logo {
+  img {
+    width: 32px;
+    border-radius: 50%;
+  }
+}
