@@ -584,8 +584,11 @@ img {
 }
 
 .gawa_header_logo {
+  width: 32px;
+  margin: 0 0 0 auto;
+  padding-top: 8px;
+
   img {
-    width: 32px;
     border-radius: 50%;
   }
 }
