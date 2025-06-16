@@ -609,7 +609,7 @@ img {
 
 .popup-content {
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
