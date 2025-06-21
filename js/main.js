@@ -26,15 +26,3 @@ function linkAction() {
 }
 
 navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-function openPopup(value) {
-  console.log("Popup opened", value);
-
-  document.getElementById("myPopup").classList.add("show");
-  document.getElementsByTagName("body")[0].style.overflow = "hidden"; // Prevent scrolling
-}
-
-function closePopup() {
-  document.getElementById("myPopup").classList.remove("show");
-  document.getElementsByTagName("body")[0].style.overflow = "auto"; // Restore scrolling
-}

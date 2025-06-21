@@ -21,7 +21,7 @@
       <nav class="nav bd-grid">
         <div>
           <div class="gawa_header_logo">
-            <a href="#home"><img src="img/icons/logo.png" alt="GAWA" /></a>
+            <a href="#home"><img src="img/icons/gawa_logo.png" alt="GAWA" /></a>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
             target="_blank"
             href="https://www.instagram.com/gawa.artstore?igsh=NHF4OTZrbTF2cnQ2"
             ><img
-              src="img/instagram_logo.png"
+              src="img/icons/instagram_logo.png"
               alt="https://www.instagram.com/gawa.artstore?igsh=NHF4OTZrbTF2cnQ2"
           /></a>
         </div>
@@ -73,161 +73,98 @@
 
       <!--===== POPUP =====-->
       <div id="myPopup" class="popup">
-        <div class="popup-content">
-          <div class="popup__container">
-            <div class="popup__product">
-              <img src="img/details/d1_1.jpeg" class="featured__img" alt="" />
-            </div>
-            <div class="popup__product">
-              <img src="img/details/d1_2.jpeg" class="featured__img" alt="" />
-            </div>
-            <div class="popup__product">
-              <img src="img/details/d1_3.jpeg" class="featured__img" alt="" />
-            </div>
-            <div class="popup__product">
-              <img src="img/details/d1_4.jpeg" class="featured__img" alt="" />
-            </div>
-          </div>
+        <div id="popup" class="popup-content">
+          <script>
+            const popupContent = document.getElementById("popup");
 
-          <h5>КВІТЕНЬ</h5>
-          <h6>
-            Ілюстрація мрійливого пейзажу, де кольори говорять голосніше за
-            слова, а млин - наче вартовий часу, що крутить крилами наших
-            спогадів і надій високоякісний екошовк Армані: - 97% поліестер - 3%
-            еластан
-          </h6>
-          <h6>45×45см: 799грн, 70×70см: 999грн, 100×100см: 1199грн</h6>
-          <button onclick="closePopup()">Close</button>
+            function openPopup(id, name, price, description) {
+              const popup = document.getElementById("popup");
+              document.getElementById("myPopup").classList.add("show");
+              document.getElementsByTagName("body")[0].style.overflow =
+                "hidden"; // Prevent scrolling
+
+              const data = [1, 2, 3, 4];
+
+              let htmlContent = `<div class="popup__container">`;
+
+              data.forEach((item) => {
+                htmlContent += `
+                      <div class="popup__product">
+                        <img src="img/products/${id}/${item}.jpeg" class="popup__img" alt="${item}" />
+                      </div>
+                    `;
+              });
+              htmlContent += `
+              </div>        
+              <h5>${name}</h5>
+              <h6>
+                ${description}
+              </h6>
+              <h6>${price}</h6>
+              <button onclick="closePopup()">Close</button>
+              `;
+              popupContent.innerHTML = htmlContent;
+            }
+
+            function closePopup() {
+              id = 0;
+              popupContent.innerHTML = "";
+              document.getElementById("myPopup").classList.remove("show");
+              document.getElementsByTagName("body")[0].style.overflow = "auto"; // Restore scrolling
+            }
+          </script>
         </div>
       </div>
-
-      <!--===== COLLECTION =====-->
-      <!-- <section class="collection section">
-        <div class="collection__container bd-grid">
-          <div class="collection__box">
-            <img src="img/backpackMan.png" alt="" class="collection__img" />
-
-            <div class="collection__data">
-              <h2 class="collection__title">
-                <span class="collection__subtitle">Men</span><br />Backpack
-              </h2>
-              <a href="#" class="collection__view">View collection</a>
-            </div>
-          </div>
-
-          <div class="collection__box">
-            <div class="collection__data">
-              <h2 class="collection__title">
-                <span class="collection__subtitle">Women</span><br />Backpack
-              </h2>
-              <a href="#" class="collection__view">View collection</a>
-            </div>
-
-            <img src="img/backpackWoman.png" alt="" class="collection__img" />
-          </div>
-        </div>
-      </section> -->
 
       <!--===== FEATURED PRODUCTS =====-->
       <section class="featured section" id="featured">
         <h2 class="section-title">Хустки</h2>
         <!-- <a href="#" class="section-all">View All</a> -->
 
-        <div class="featured__container bd-grid">
-          <div class="featured__product">
-            <div class="featured__box" onclick="openPopup('img/feature1.jpg')">
-              <!-- <div class="featured__new">NEW</div> -->
-              <img src="img/products/h1.jpeg" class="featured__img" alt="" />
-            </div>
+        <div id="gallery" class="featured__container bd-grid">
+          <script>
+            // JavaScript code will go here to fetch and display the JSON
+            async function loadAndDisplayJSON() {
+              try {
+                // 1. Fetch the JSON file
+                const response = await fetch("data.json");
 
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 1</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
+                // Check if the request was successful
+                if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
-          <div class="featured__product">
-            <div class="featured__box">
-              <!-- <div class="featured__new">NEW</div> -->
-              <img src="img/feature2.jpg" class="featured__img" alt="" />
-            </div>
+                // 2. Parse the JSON response into a JavaScript object
+                const data = await response.json();
 
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 2</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
+                // 3. Display the data in the HTML
+                const galleryContainer = document.getElementById("gallery");
+                let htmlContent = "";
 
-          <div class="featured__product">
-            <div class="featured__box">
-              <!-- <div class="featured__new">NEW</div> -->
-              <img src="img/feature3.jpg" class="featured__img" alt="" />
-            </div>
+                data.forEach((item) => {
+                  htmlContent += `
+                      <div class="featured__product" >
+                        <div class="featured__box" onclick="openPopup('${item.id}','${item.name}','${item.price}','${item.description}')">
+                          <img src="${item.url}" class="featured__img" alt="${item.name}" />
+                        </div>
+                        <div class="featured__data">
+                          <h3 class="featured__name">Хустка</h3>
+                        </div>
+                      </div>
+                    `;
+                });
 
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 3</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
+                galleryContainer.innerHTML = htmlContent;
+              } catch (error) {
+                console.error("Error loading JSON data:", error);
+                document.getElementById("gallery").textContent =
+                  "Failed to load gallery data.";
+              }
+            }
 
-          <div class="featured__product">
-            <div class="featured__box">
-              <!-- <div class="featured__new">NEW</div> -->
-              <img src="img/feature4.jpg" class="featured__img" alt="" />
-            </div>
-
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 4</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
-          <div class="featured__product">
-            <div class="featured__box">
-              <!-- <div class="featured__new">NEW</div> -->
-              <img src="img/feature1.jpg" class="featured__img" alt="" />
-            </div>
-
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 5</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
-
-          <div class="featured__product">
-            <div class="featured__box">
-              <!-- <div class="featured__new">NEW</div> -->
-              <img src="img/feature2.jpg" class="featured__img" alt="" />
-            </div>
-
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 6</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
-
-          <div class="featured__product">
-            <div class="featured__box">
-              <div class="featured__new">NEW</div>
-              <img src="img/feature3.jpg" class="featured__img" alt="" />
-            </div>
-
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 7</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
-
-          <div class="featured__product">
-            <div class="featured__box">
-              <div class="featured__new">NEW</div>
-              <img src="img/feature4.jpg" class="featured__img" alt="" />
-            </div>
-
-            <div class="featured__data">
-              <h3 class="featured__name">Хустка 8</h3>
-              <!-- <span class="featured__price">999 грн.</span> -->
-            </div>
-          </div>
+            // Call the function when the page loads
+            document.addEventListener("DOMContentLoaded", loadAndDisplayJSON);
+          </script>
         </div>
       </section>
 
@@ -244,62 +181,6 @@
           </div>
         </div>
       </section>
-
-      <!--===== NEW ARRIVALS =====-->
-      <!-- <section class="featured section" id="new">
-        <h2 class="section-title">NEW ARRIVALS</h2>
-        <a href="#" class="section-all">View All</a>
-
-        <div class="new__container bd-grid">
-          <div class="new__box">
-            <img src="img/new1.png" alt="" class="new__img" />
-
-            <div class="new__link">
-              <a href="#" class="button">VIEW PRODUCT</a>
-            </div>
-          </div>
-
-          <div class="new__box">
-            <img src="img/new2.png" alt="" class="new__img" />
-
-            <div class="new__link">
-              <a href="#" class="button">VIEW PRODUCT</a>
-            </div>
-          </div>
-
-          <div class="new__box">
-            <img src="img/new3.png" alt="" class="new__img" />
-
-            <div class="new__link">
-              <a href="#" class="button">VIEW PRODUCT</a>
-            </div>
-          </div>
-
-          <div class="new__box">
-            <img src="img/new4.png" alt="" class="new__img" />
-
-            <div class="new__link">
-              <a href="#" class="button">VIEW PRODUCT</a>
-            </div>
-          </div>
-
-          <div class="new__box">
-            <img src="img/new5.png" alt="" class="new__img" />
-
-            <div class="new__link">
-              <a href="#" class="button">VIEW PRODUCT</a>
-            </div>
-          </div>
-
-          <div class="new__box">
-            <img src="img/new6.png" alt="" class="new__img" />
-
-            <div class="new__link">
-              <a href="#" class="button">VIEW PRODUCT</a>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
       <!--===== NEWSLETTER =====-->
       <section class="newsletter section" id="subscribed">
@@ -319,24 +200,6 @@
           </div>
         </div>
       </section>
-
-      <!--===== SPONSORS =====-->
-      <!-- <section class="sponsors section">
-        <div class="sponsors__container bd-grid">
-          <div class="sponsors__logo">
-            <img src="img/logo1.png" alt="" />
-          </div>
-          <div class="sponsors__logo">
-            <img src="img/logo2.png" alt="" />
-          </div>
-          <div class="sponsors__logo">
-            <img src="img/logo3.png" alt="" />
-          </div>
-          <div class="sponsors__logo">
-            <img src="img/logo4.png" alt="" />
-          </div>
-        </div>
-      </section> -->
     </main>
 
     <!--===== FOOTER =====-->
@@ -379,7 +242,7 @@
               target="_blank"
               href="https://www.instagram.com/gawa.artstore?igsh=NHF4OTZrbTF2cnQ2"
               ><img
-                src="img/instagram_logo.png"
+                src="img/icons/instagram_logo.png"
                 alt="https://www.instagram.com/gawa.artstore?igsh=NHF4OTZrbTF2cnQ2"
                 class="footer__store"
             /></a>
