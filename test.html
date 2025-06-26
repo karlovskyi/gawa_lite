@@ -85,7 +85,7 @@
 
               const data = [1, 2, 3, 4];
 
-              let htmlContent = `<div class="popup__container">`;
+              let htmlContent = `<div class="popup__container"><div class="popup__scroll__container">`;
 
               data.forEach((item) => {
                 htmlContent += `
@@ -95,7 +95,7 @@
                     `;
               });
               htmlContent += `
-              </div>        
+              </div></div>     
               <h5>${name}</h5>
               <h6>
                 ${description}

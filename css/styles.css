@@ -607,14 +607,30 @@ img {
   overflow: auto;
 }
 
-.popup-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
+@media screen and (max-width: 768px) {
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 800px;
+  }
 }
 
 .popup.show {
@@ -622,15 +638,60 @@ img {
 }
 
 .popup__container {
-  /* row-gap: 2rem; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .popup__product {
-  width: 184px;
-  padding: 20px;
-  transition: 0.3s;
+  flex: 0 0 184px; /* Don't grow, don't shrink, base width of 150px */
+  height: 184px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.popup__product:last-child {
+  margin-right: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__scroll__container {
+    width: 100%; /* Set a fixed width for your container */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    display: flex; /* Make it a flex container */
+    /* Customize scrollbar appearance */
+    ::-webkit-scrollbar {
+      width: 8px; /* Width of the scrollbar */
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1; /* Color of the track */
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888; /* Color of the scrollbar thumb */
+      border-radius: 4px; /* Round the corners */
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popup__scroll__container {
+    width: 100%; /* Set a fixed width for your container */
+    overflow-x: hidden; /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    display: flex; /* Make it a flex container */
+  }
 }
