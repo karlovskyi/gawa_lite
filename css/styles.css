@@ -658,6 +658,12 @@ img {
   margin-right: 0px;
 }
 
+.popup__close {
+  position: fixed;
+  top: -40px;
+  right: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .popup__scroll__container {
     width: 100%; /* Set a fixed width for your container */

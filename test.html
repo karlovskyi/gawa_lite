@@ -85,7 +85,9 @@
 
               const data = [1, 2, 3, 4];
 
-              let htmlContent = `<div class="popup__container"><div class="popup__scroll__container">`;
+              let htmlContent = `<img src="img/icons/close.svg" class="popup__close" alt="close" onclick="closePopup()"/>
+                                <div class="popup__container">
+                                  <div class="popup__scroll__container">`;
 
               data.forEach((item) => {
                 htmlContent += `
@@ -95,13 +97,13 @@
                     `;
               });
               htmlContent += `
-              </div></div>     
+                </div>
+              </div>     
               <h5>${name}</h5>
               <h6>
                 ${description}
               </h6>
               <h6>${price}</h6>
-              <button onclick="closePopup()">Close</button>
               `;
               popupContent.innerHTML = htmlContent;
             }
