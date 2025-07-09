@@ -95,6 +95,10 @@
 
               let htmlContent = `<img src="img/icons/close.svg" class="popup__close" alt="close" onclick="closePopup()"/>
                                 <div class="popup__container">
+                                  <h5>${name}</h5>
+                                    <h6>
+                                      ${description}
+                                    </h6>
                                   <div class="popup__scroll__container">`;
 
               data.forEach((item) => {
@@ -107,10 +111,6 @@
               htmlContent += `
                 </div>
               </div>     
-              <h5>${name}</h5>
-              <h6>
-                ${description}
-              </h6>
               <h6>${price}</h6>
               `;
               popupContent.innerHTML = htmlContent;
