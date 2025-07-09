@@ -101,7 +101,7 @@ img {
 .section-title {
   font-size: var(--h2-font-size);
   color: var(--dark-color);
-  margin: var(--mb-4) 0 var(--mb-1);
+  margin: var(--mb-4) 0 var(--mb-3);
   text-align: center;
 }
 
@@ -202,6 +202,10 @@ img {
 
 .home__data {
   padding-top: 6rem;
+}
+
+.home__text {
+  width: 50%;
 }
 
 .home__title {
@@ -512,6 +516,10 @@ img {
     align-self: center;
   }
 
+  .home__text {
+    width: 50%;
+  }
+
   .home__title {
     line-height: 0.8;
     letter-spacing: 1.5rem;
@@ -519,6 +527,7 @@ img {
 
   .home__img {
     width: 370px;
+    scale: 1.2;
   }
 
   .collection__container {
@@ -566,6 +575,10 @@ img {
 
   .home__data {
     padding-left: 7rem;
+  }
+
+  .home__text {
+    width: 50%;
   }
 
   .home__img {
