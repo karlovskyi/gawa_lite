@@ -324,7 +324,7 @@ img {
 .featured__name {
   margin-bottom: var(--mb-1);
   text-transform: uppercase;
-  font-size: var(--normal-font-size);
+  font-size: var(--small-font-size);
 }
 
 .featured__price {
@@ -671,13 +671,13 @@ img {
   margin-right: 0px;
 }
 
-.popup__close {
-  position: fixed;
-  top: -40px;
-  right: 10px;
-}
-
 @media screen and (max-width: 768px) {
+  .popup__close {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
   .popup__scroll__container {
     width: 100%; /* Set a fixed width for your container */
     overflow-x: scroll; /* Enable horizontal scrolling */
@@ -707,6 +707,12 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .popup__close {
+    position: fixed;
+    top: -40px;
+    right: 10px;
+  }
+
   .popup__scroll__container {
     width: 100%; /* Set a fixed width for your container */
     overflow-x: hidden; /* Enable horizontal scrolling */
