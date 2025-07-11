@@ -222,9 +222,9 @@ img {
 
 .home__img {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 260px;
+  right: 2%;
+  bottom: -4%;
+  width: 400px;
 }
 
 /*BUTTONS*/
@@ -526,8 +526,10 @@ img {
   }
 
   .home__img {
-    width: 370px;
-    scale: 1.2;
+    position: absolute;
+    right: 0;
+    bottom: -4%;
+    width: 470px;
   }
 
   .collection__container {
@@ -583,6 +585,8 @@ img {
 
   .home__img {
     right: 15%;
+    bottom: 3%;
+    width: 370px;
   }
 }
 
