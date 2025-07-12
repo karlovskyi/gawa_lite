@@ -223,8 +223,8 @@ img {
 .home__img {
   position: absolute;
   right: 2%;
-  bottom: -4%;
-  width: 400px;
+  bottom: 0;
+  width: 175px;
 }
 
 /*BUTTONS*/
@@ -537,9 +537,9 @@ img {
 
   .home__img {
     position: absolute;
-    right: 0;
-    bottom: -4%;
-    width: 470px;
+    right: 15%;
+    bottom: 0;
+    width: 200px;
   }
 
   .collection__container {
@@ -596,8 +596,8 @@ img {
   .home__img {
     position: absolute;
     right: 15%;
-    bottom: -4%;
-    width: 470px;
+    bottom: 0;
+    width: 200px;
   }
 }
 
