@@ -333,13 +333,17 @@ img {
 }
 
 /*===== OFFER =====*/
+.offer {
+  padding: 3rem 0 0 0;
+}
+
 .offer__bg {
-  background: url("../img/offer.jpg") no-repeat center/cover;
+  background: url("../img/offer.png") no-repeat center/cover;
   text-align: center;
 }
 
 .offer__data {
-  padding: 3.5rem 0.25rem;
+  padding: 1.5rem 0.25rem;
   background: rgba(0, 0, 0, 0.5);
   color: var(--white-color);
 }
