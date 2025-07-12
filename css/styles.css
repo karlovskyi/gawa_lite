@@ -194,6 +194,7 @@ img {
 /*===== HOME =====*/
 .home {
   background-color: var(--gray-color);
+  height: calc(100vh - var(--header-height));
 }
 
 .home__container {
