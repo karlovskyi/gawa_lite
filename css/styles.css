@@ -521,10 +521,6 @@ img {
     display: none;
   }
 
-  .home__container {
-    height: 100vh;
-  }
-
   .home__data {
     padding: 0;
     height: max-content;
@@ -543,7 +539,7 @@ img {
   .home__img {
     position: absolute;
     right: 15%;
-    bottom: 0;
+    bottom: calc(var(--header-height));
     width: 200px;
   }
 
@@ -601,7 +597,7 @@ img {
   .home__img {
     position: absolute;
     right: 15%;
-    bottom: 0;
+    bottom: calc(var(--header-height));
     width: 200px;
   }
 }
