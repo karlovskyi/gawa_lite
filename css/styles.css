@@ -474,6 +474,16 @@ img {
   font-size: var(--small-font-size);
 }
 
+.footer__design {
+  position: absolute;
+  right: 1%;
+
+  > * {
+    font-size: 0.7rem;
+    color: #555;
+  }
+}
+
 /* ===== MEDIA QUERIES=====*/
 @media screen and (min-width: 768px) {
   body {
@@ -586,7 +596,7 @@ img {
   .home__img {
     position: absolute;
     right: 15%;
-    bottom: -7%;
+    bottom: -4%;
     width: 470px;
   }
 }
