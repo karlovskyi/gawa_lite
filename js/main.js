@@ -28,9 +28,13 @@ function linkAction() {
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 /*===== REMOVE TEL TAGS DESKTOP =====*/
-var msie = window.navigator.userAgent.indexOf("MSIE ");
+function hasTelSupport() {
+  return /iphone|android|ie|blackberry|fennec/.test(
+    navigator.userAgent.toLowerCase()
+  );
+}
 
-if (msie < 0) {
+if (!hasTelSupport()) {
   var items = [];
   var tags = document.querySelectorAll("a[href^='tel']");
 
