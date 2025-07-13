@@ -450,6 +450,7 @@ img {
 
 .footer__deal {
   margin-bottom: var(--mb-2);
+  color: var(--white-color);
 }
 
 .footer__store {
@@ -480,7 +481,7 @@ img {
 
 .footer__design {
   position: absolute;
-  right: 1%;
+  right: 2rem;
 
   > * {
     font-size: 0.7rem;

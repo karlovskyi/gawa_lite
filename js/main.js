@@ -26,3 +26,19 @@ function linkAction() {
 }
 
 navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+/*===== REMOVE TEL TAGS DESKTOP =====*/
+var msie = window.navigator.userAgent.indexOf("MSIE ");
+
+if (msie < 0) {
+  var items = [];
+  var tags = document.querySelectorAll("a[href^='tel']");
+
+  for (var i = 0; i < tags.length; i++) {
+    items[i] = tags[i];
+  }
+
+  for (var i = 0; i < items.length; i++) {
+    items[i].removeAttribute("href");
+  }
+}
