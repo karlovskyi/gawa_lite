@@ -70,7 +70,7 @@
               </h5>
             </div>
 
-            <img src="img/home.png" class="home__img" alt="" />
+            <img src="img/home.png" class="home__img" loading="lazy" alt="" />
           </div>
         </div>
       </section>
@@ -88,7 +88,7 @@
 
               const data = [1, 2, 3];
 
-              let htmlContent = `<img src="img/icons/close.svg" class="popup__close" alt="close" onclick="closePopup()"/>
+              let htmlContent = `<img src="img/icons/close.svg" class="popup__close" loading="lazy" alt="close" onclick="closePopup()"/>
                                 <div class="popup__container">
                                   <h5>${name}</h5>
                                     <h6>
@@ -99,7 +99,7 @@
               data.forEach((item) => {
                 htmlContent += `
                       <div class="popup__product">
-                        <img src="img/products/${id}/${item}.jpeg" class="popup__img" alt="${item}" />
+                        <img src="img/products/${id}/${item}.jpeg" class="popup__img" loading="lazy" alt="${item}" />
                       </div>
                     `;
               });
@@ -143,7 +143,7 @@
                   htmlContent += `
                       <div class="featured__product" >
                         <div class="featured__box" onclick="openPopup('${item.id}','${item.name}','${item.price}','${item.description}')">
-                          <img src="img/products/${item.id}/main.jpeg" class="featured__img" alt="${item.name}" />
+                          <img src="img/products/${item.id}/main.jpeg" class="featured__img" loading="lazy"alt="${item.name}" />
                         </div>
                         <div class="featured__data">
                           <h3 class="featured__name">${item.name}</h3>
@@ -201,6 +201,7 @@
                 src="img/icons/instagram_logo.png"
                 alt="https://www.instagram.com/gawa.artstore?igsh=NHF4OTZrbTF2cnQ2"
                 class="footer__store"
+                loading="lazy"
             /></a>
           </div>
         </div>
