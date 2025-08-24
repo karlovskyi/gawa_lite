@@ -668,10 +668,14 @@ img {
 
 .popup__container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
+
+  h5 {
+    margin: 0 auto;
+  }
 }
 
 .popup__product {

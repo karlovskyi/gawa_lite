@@ -75,14 +75,14 @@
         </div>
       </section>
 
-      <div id="myPopup" class="popup">
+      <div id="popup-section" class="popup">
         <div id="popup" class="popup-content">
           <script>
             const popupContent = document.getElementById("popup");
 
             function openPopup(id, name, price, description) {
               const popup = document.getElementById("popup");
-              document.getElementById("myPopup").classList.add("show");
+              document.getElementById("popup-section").classList.add("show");
               document.getElementsByTagName("body")[0].style.overflow =
                 "hidden"; // Prevent scrolling
 
@@ -114,7 +114,7 @@
             function closePopup() {
               id = 0;
               popupContent.innerHTML = "";
-              document.getElementById("myPopup").classList.remove("show");
+              document.getElementById("popup-section").classList.remove("show");
               document.getElementsByTagName("body")[0].style.overflow = "auto"; // Restore scrolling
             }
           </script>
