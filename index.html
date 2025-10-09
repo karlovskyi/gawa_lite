@@ -130,7 +130,7 @@
               try {
                 const response = await fetch("data.json");
 
-                if (!response.ok || Math.random() > 0.5) {
+                if (!response.ok || Math.random() > 0.95) {
                   throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
